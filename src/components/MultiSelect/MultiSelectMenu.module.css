@@ -1,0 +1,76 @@
+.container {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0px 8px 15px 0px #1414141f, 0px 0px 4px 0px #1414141a;
+  opacity: 1;
+  padding: 10px 0 10px 0;
+}
+
+/* For webkit browsers */
+.optionsContainer::-webkit-scrollbar {
+  width: 3px;
+  background-color: transparent;
+}
+
+.optionsContainer::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.optionsContainer::-webkit-scrollbar-thumb:hover {
+  background-color: darkgray;
+}
+
+.customCheckbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  position: relative;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+.customCheckbox:checked {
+  background-color: rgb(59 130 246);
+  border: none;
+}
+
+.customCheckbox:checked::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 10px;
+  height: 18px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.customCheckbox:not(:checked):hover::before {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 10px;
+  height: 18px;
+  border: solid #878787;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.customCheckbox:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.doneButton {
+  background-color: #ffce22;
+  color: black;
+}
+
+.doneButton:hover {
+  background: #ffd84d;
+}
