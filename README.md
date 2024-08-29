@@ -1,36 +1,99 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Overview
+
+This Next.js project provides a web application with interactive functionalities for managing page selections and input validation. The primary features include:
+
+1. **Page Selection Menu**: A multi-select menu that allows users to choose from a list of options. Users can select individual items or use a select-all option.
+2. **Number Input with Validation**: An input field for specifying the number of pages to be kept, with validation to ensure the input is within a specified range.
+
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up and run the project locally:
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/) (included with Node.js)
+
+### Clone the Repository
+
+Clone the repository using Git:
+
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
+
+### Install Dependencies
+
+Navigate to the project directory and install the necessary dependencies:
+
+```bash
+npm install
+```
+
+### Start the Development Server
+
+Launch the Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and go to http://localhost:3000 to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Page Selection Menu
 
-## Learn More
+The Page Selection Menu allows users to:
 
-To learn more about Next.js, take a look at the following resources:
+- **Select Multiple Options**: Users can choose from a list of pages.
+- **Select/Deselect All**: A special option to select or deselect all available options at once.
+- **Receive Notifications**: A button displays a notification showing the currently selected options.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Number Input with Validation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Number Input component provides:
 
-## Deploy on Vercel
+- **Input for Page Count**: Users can specify how many pages they want to keep.
+- **Validation**: The input is validated to ensure the number is between 1 and 100. An error message is shown if the input is out of range or invalid.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To ensure the functionality of the application, tests are provided for key features:
+
+### Run Tests
+
+Execute the following command to run the tests:
+
+```bash
+npx jest <path to .test.tsx file> 
+```
+
+## Testing Features
+
+- **Page Selection Menu**: Tests cover selection logic and notification display.
+- **Number Input Validation**: Tests ensure correct validation of input values and error handling.
+
+## Contribution
+
+Contributions are welcome! To contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch for your changes**:
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. **Make your changes and commit them**:
+   ```bash
+   git commit -am 'Add new feature'
+   ```
+4. **Push your changes to the branch:**:
+   ```bash
+   git push origin feature-branch
+   ```
+5. **Submit a pull request.**

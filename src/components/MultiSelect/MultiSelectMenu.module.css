@@ -8,17 +8,17 @@
 }
 
 /* For webkit browsers */
-.container::-webkit-scrollbar {
-  width: 1px;
+.optionsContainer::-webkit-scrollbar {
+  width: 3px;
   background-color: transparent;
 }
 
-.container::-webkit-scrollbar-thumb {
+.optionsContainer::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 10px;
 }
 
-.container::-webkit-scrollbar-thumb:hover {
+.optionsContainer::-webkit-scrollbar-thumb:hover {
   background-color: darkgray;
 }
 
@@ -48,6 +48,22 @@
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.customCheckbox:not(:checked):hover::before {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 10px;
+  height: 18px;
+  border: solid #878787;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.customCheckbox:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .doneButton {

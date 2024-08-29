@@ -1,26 +1,56 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
 
+/**
+ * Props for the NumberInput component.
+ *
+ * @interface NumericInput
+ * @property {string} totalNumberOfPages - The current value of the number input.
+ * @property {(totalNumberOfPages: string) => void} setTotalNumberOfPages - Callback function to set the value of the number input.
+ * @property {string} error - The current value of error message.
+ * @property {(error: string) => void} setError - Callback function to set the error.
+ */
 interface NumericInput {
   totalNumberOfPages: string;
   setTotalNumberOfPages: (totalNumberOfPages: string) => void;
+  error?: string;
+  setError?: (error: string) => void;
 }
 
+/**
+ * NumberInput component allows users to input a number between 1 and 100.
+ * It validates the input and displays an error message if the input is invalid.
+ *
+ * @component
+ * @example
+ * return (
+ *   <NumberInput
+ *     totalNumberOfPages="10"
+ *     setTotalNumberOfPages={(value) => console.log(value)}
+ *   />
+ * )
+ */
 const NumberInput = ({
   totalNumberOfPages,
   setTotalNumberOfPages,
+  error,
+  setError,
 }: NumericInput) => {
-  const [error, setError] = useState<string>("");
-
+  /**
+   * Handles the change event of the number input.
+   * Validates the input value and updates the state or displays an error message.
+   *
+   * @param {ChangeEvent<HTMLInputElement>} e - The change event of the number input.
+   */
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     const numberValue = newValue === "" ? "" : Number(newValue);
 
     if (newValue === "" || (+numberValue >= 1 && +numberValue <= 100)) {
       setTotalNumberOfPages(newValue);
-      setError("");
+      if (setError) setError("");
     } else {
-      setError("Please enter a number between 1 and 100.");
+      if (setError) setError("Please provide a number between 1 and 100.");
     }
   };
 
@@ -30,7 +60,7 @@ const NumberInput = ({
         htmlFor="pages-input"
         className="mb-2 font-bold text-lg text-gray-700"
       >
-        Enter number of pages you want to keep
+        📚 Choose How Many Pages to Keep
       </label>
       <input
         type="number"

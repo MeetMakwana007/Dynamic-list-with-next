@@ -1,33 +1,38 @@
 "use client";
-import NumberInput from "@components/Input";
+import NumberInput from "@components/NumberInput";
 import MultiSelect from "@components/MultiSelect";
-import { useState } from "react";
-
-const options = [
-  { value: "option1", label: "Option 1" },
-  { value: "option2", label: "Option 2" },
-  { value: "option3", label: "Option 3" },
-  { value: "option4", label: "Option 4" },
-];
+import { useMemo, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   const [totalPages, setTotalPages] = useState("");
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const [error, setError] = useState<string>("");
 
+  const options = useMemo(() => {
+    return Array.from({ length: +totalPages }, (_, i) => ({
+      value: `page${i + 1}`,
+      label: `Page ${i + 1}`,
+    }));
+  }, [totalPages]);
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="flex flex-col gap-10 items-center justify-between p-24">
       <NumberInput
         totalNumberOfPages={totalPages}
         setTotalNumberOfPages={setTotalPages}
+        error={error}
+        setError={setError}
       />
-      <div className="p-4">
-        <h1 className="text-xl font-bold mb-4">Multi-Select Menu</h1>
-        <MultiSelect
-          options={options}
-          selectedValues={selectedValues}
-          onChange={setSelectedValues}
-        />
-      </div>
+      <MultiSelect
+        options={options}
+        selectedValues={selectedValues}
+        onClear={() => {
+          setSelectedValues([]);
+          setTotalPages("");
+          setError("");
+        }}
+        onChange={setSelectedValues}
+      />
     </main>
   );
 }
