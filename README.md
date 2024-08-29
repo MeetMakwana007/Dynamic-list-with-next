@@ -7,6 +7,14 @@ This Next.js project provides a web application with interactive functionalities
 1. **Page Selection Menu**: A multi-select menu that allows users to choose from a list of options. Users can select individual items or use a select-all option.
 2. **Number Input with Validation**: An input field for specifying the number of pages to be kept, with validation to ensure the input is within a specified range.
 
+### Check live website demo here: ### https://taskina-frontend-test.vercel.app/
+
+Steps: 
+1. **Type any number from 1 to 100 in input box.**
+2. **Select Pages from below list.**
+3. **Hit Done button 🚀🚀🚀, You'll see amazing notification about your selection.**
+
+
 ## Getting Started
 
 Follow these instructions to set up and run the project locally:
