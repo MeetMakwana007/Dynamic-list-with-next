@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+FThis is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Overview
 
@@ -7,7 +7,7 @@ This Next.js project provides a web application with interactive functionalities
 1. **Page Selection Menu**: A multi-select menu that allows users to choose from a list of options. Users can select individual items or use a select-all option.
 2. **Number Input with Validation**: An input field for specifying the number of pages to be kept, with validation to ensure the input is within a specified range.
 
-### Check live website demo here: ### https://taskina-frontend-test.vercel.app/
+### Check live website demo here: ### https://dynamic-list-with-nextjs.vercel.app/
 
 Steps: 
 1. **Type any number from 1 to 100 in input box.**
